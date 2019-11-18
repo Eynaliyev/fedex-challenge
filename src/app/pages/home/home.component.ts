@@ -20,6 +20,10 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchGiphs($event) {
+    console.log($event);
+  }
+
   setPageSizeOptions(setPageSizeOptionsInput: string) {
     this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
   }

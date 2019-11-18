@@ -6,12 +6,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
-  radius = '10000';
-  @Output() searchGiphs = new EventEmitter<string>();
+  searchTerm = null;
+  @Output() searchgiphs = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  searchGiphs() {
+    this.searchgiphs.emit(this.searchTerm);
+  }
 }

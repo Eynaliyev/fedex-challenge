@@ -5,7 +5,6 @@ import { HomePageModule } from './pages/home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
 @NgModule({
@@ -16,7 +15,6 @@ import { CommonModule } from "@angular/common";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
     CommonModule,
     SharedModule,
     HomePageModule
