@@ -1,1 +1,7 @@
-<p>search-form works!</p>
+<form class="search-form">
+  <mat-form-field>
+    <input matInput placeholder="Search" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+      (keyup.enter)="searchGiphs(box.value)"">
+  </mat-form-field>
+</form>
+<button mat-raised-button (click)=" getGyphs()">Find gyphs!</button>

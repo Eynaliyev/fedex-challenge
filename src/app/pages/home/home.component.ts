@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchFormComponent } from './components/search-form/search-form.component';
-import { GyphListComponent } from './components/gyph-list/gyph-list.component';
 import { PageEvent } from '@angular/material/paginator';
 
 @Component({
@@ -8,7 +6,7 @@ import { PageEvent } from '@angular/material/paginator';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomePageComponent implements OnInit {
   // MatPaginator Inputs
   length = 100;
   pageSize = 10;
