@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchFormComponent } from './components/search-form';
-import { GyphListComponent } from './components/gyph-list';
+import { SearchFormComponent } from './components/search-form/search-form.component';
+import { GyphListComponent } from './components/gyph-list/gyph-list.component';
 import { PageEvent } from '@angular/material/paginator';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home-page',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

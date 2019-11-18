@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchFormComponent } from './pages/home/components/search-form/search-form.component';
 import { GyphListComponent } from './pages/home/components/gyph-list/gyph-list.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

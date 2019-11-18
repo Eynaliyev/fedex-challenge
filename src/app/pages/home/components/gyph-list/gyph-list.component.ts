@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-gyph-list',
+  selector: 'gyph-list',
   templateUrl: './gyph-list.component.html',
   styleUrls: ['./gyph-list.component.scss']
 })
