@@ -23,7 +23,7 @@ describe('giphService', () => {
     const service: GiphService = TestBed.get(giphService);
     expect(service).toBeTruthy();
   });
-  it("should convert getgiphList response to giph", () => {
+  it("should convert getGiphList response to giph", () => {
     const res = giphService.responseTogiph(mockResponse);
     expect(res).toEqual(mockgiphs, "expected giphs");
   });
@@ -32,7 +32,7 @@ describe('giphService', () => {
     httpClientSpy.get.and.returnValue(asyncData(mockResponse));
 
     giphService
-      .getgiphList('puppies', 1, 10)
+      .getGiphList('puppies', 1, 10)
       .subscribe(
         giphs => expect(giphs).toEqual(mockgiphs, "expected response"),
         fail

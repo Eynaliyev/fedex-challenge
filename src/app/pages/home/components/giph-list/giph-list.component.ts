@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { giph } from '@/app/pages/home/models/giph.model';
+import { Giph } from '@/app/pages/home/models/giph.model';
 @Component({
   selector: 'giph-list',
   templateUrl: './giph-list.component.html',
   styleUrls: ['./giph-list.component.scss']
 })
-export class giphListComponent implements OnInit {
-  @Input() giphs: giph[];
+export class GiphListComponent implements OnInit {
+  @Input() giphs: Giph[];
   @Input() showProfanityWarning: boolean;
 
   constructor() { }

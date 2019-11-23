@@ -11,14 +11,14 @@ import {
 } from "@angular/material";
 import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-import { giphListComponent } from './components/giph-list/giph-list.component';
+import { GiphListComponent } from './components/giph-list/giph-list.component';
 import { FormsModule } from "@angular/forms";
 import { GiphService } from './services/giph.service';
 import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   declarations: [
-    giphListComponent,
+    GiphListComponent,
     HomePageComponent,
     SearchFormComponent
   ],

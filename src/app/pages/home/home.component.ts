@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { GiphService } from './services/giph.service';
-import { giph } from './models/giph.model';
+import { Giph } from './models/giph.model';
 import Filter from 'bad-words';
 @Component({
   selector: 'home-page',
@@ -9,8 +9,8 @@ import Filter from 'bad-words';
   styleUrls: ['./home.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  giphList: giph[] = [];
-  displayList: giph[] = [];
+  giphList: Giph[] = [];
+  displayList: Giph[] = [];
   // MatPaginator Inputs
   listLength = 0;
   pageIndex = 0;
@@ -40,7 +40,7 @@ export class HomePageComponent implements OnInit {
       this.showProfanityWarning = true;
     } else {
       this.showProfanityWarning = false;
-      this.giphSrvc.getgiphList(e, this.pageIndex, this.pageSize)
+      this.giphSrvc.getGiphList(e, this.pageIndex, this.pageSize)
         .subscribe(res => {
           this.giphList = res;
           this.listLength = res.length;
