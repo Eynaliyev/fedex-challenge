@@ -2,9 +2,8 @@
   <p>home works!</p>
   <search-form (searchgiphs)="onSearchTermChange($event)">
   </search-form>
-  <gyph-list [gyphs]="gyphList"></gyph-list>
   <mat-paginator [length]="listLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
     (page)="onPageChange($event)">
   </mat-paginator>
-
+  <gyph-list [gyphs]="displayList"></gyph-list>
 </div>

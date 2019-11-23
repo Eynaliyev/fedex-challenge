@@ -17,11 +17,11 @@ export class GyphService {
     pageIndex: number = 1,
     pageSize: number = 10
   ): Observable<Gyph[]> {
-    const limit = pageSize * pageIndex;
-    const offset = (pageIndex - 1) * pageSize;
+    const limit = 200; // could potentially extend the functionality to make this
+    const offset = pageIndex * pageSize;
     const gyphsListUrl =
       this.baseUrl +
-      `&q=${query}&limit=${limit}&offset=${offset}&rating=PG-13&lang=en`;
+      `&q=${query}&limit=${limit}&offset=${offset}&rating=PG&lang=en`;
 
     return this.http
       .get(gyphsListUrl)
@@ -37,7 +37,7 @@ export class GyphService {
   toGyph(item): Gyph {
     const result = {
       id: item.id,
-      url: item.url
+      url: item.images.downsized_large.url
     };
     return result;
   }

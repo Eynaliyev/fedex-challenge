@@ -24,11 +24,6 @@ describe('GyphService', () => {
     expect(service).toBeTruthy();
   });
   it("should convert getGyphList response to gyph", () => {
-    console.log(
-      mockResponse,
-      gyphService.responseToGyph(mockResponse),
-      mockGyphs
-    );
     const res = gyphService.responseToGyph(mockResponse);
     expect(res).toEqual(mockGyphs, "expected gyphs");
   });

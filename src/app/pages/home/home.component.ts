@@ -10,35 +10,47 @@ import { Gyph } from './models/gyph.model';
 })
 export class HomePageComponent implements OnInit {
   gyphList: Gyph[] = [];
+  displayList: Gyph[] = [];
   // MatPaginator Inputs
-  listLength = 100;
+  listLength = 0;
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
-  searchTerm = '';
 
   constructor(private gyphSrvc: GyphService) { }
 
   ngOnInit() {
   }
+  /* TODO:
+  page size shouldn't change the loading - jsut displaying - pass it to the list and
+  / create display list prop that returns start and end indexed images
+  add bad words filtering
+  */
 
   onPageChange(e) {
     this.pageIndex = e.pageIndex;
     this.pageSize = e.pageSize;
-    this.searchGiphs();
+    this.updateDisplayList();
   }
 
   onSearchTermChange(e) {
-    this.searchTerm = e;
-    this.searchGiphs();
-  }
-
-  searchGiphs() {
-    this.gyphSrvc.getGyphList(this.searchTerm, this.pageIndex, this.pageSize)
+    this.gyphSrvc.getGyphList(e, this.pageIndex, this.pageSize)
       .subscribe(res => {
         this.gyphList = res;
         this.listLength = res.length;
+        this.resetPaginator();
       });
-    console.log(this.searchTerm, this.pageIndex, this.pageSize);
   }
+
+  resetPaginator() {
+    this.pageIndex = 0;
+    this.updateDisplayList();
+  }
+
+  updateDisplayList() {
+    const startIndex = this.pageIndex * this.pageSize;
+    const endIndex = (this.pageIndex + 1) * this.pageSize;
+    this.displayList = this.gyphList.slice(startIndex, endIndex);
+  }
+
 }
