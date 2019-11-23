@@ -1,10 +1,10 @@
 <div class="home page">
   <p>home works!</p>
-  <search-form (searchgiphs)="searchGiphs($event)">
+  <search-form (searchgiphs)="onSearchTermChange($event)">
   </search-form>
-  <gyph-list></gyph-list>
-  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-    (page)="pageEvent = $event">
+  <gyph-list [gyphs]="gyphList"></gyph-list>
+  <mat-paginator [length]="listLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
+    (page)="onPageChange($event)">
   </mat-paginator>
 
 </div>

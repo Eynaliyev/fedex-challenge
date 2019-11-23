@@ -9,10 +9,22 @@ import {
 } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from "@angular/forms";
+import { Observable } from "rxjs";
 
 import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { GyphListComponent } from './components/gyph-list/gyph-list.component';
+import { GyphService } from './services/gyph.service';
+import { mockGyphs } from './services/mock-data';
+
+class MockGyphService {
+  getVenuesList() {
+    return new Observable(observer => {
+      observer.next(mockGyphs);
+      observer.complete();
+    });
+  }
+}
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -35,6 +47,9 @@ describe('HomePageComponent', () => {
         BrowserAnimationsModule,
         FormsModule
       ],
+      providers: [
+        { provide: GyphService, useClass: MockGyphService }
+      ]
     })
       .compileComponents();
   }));

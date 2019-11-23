@@ -14,17 +14,20 @@ export class GyphService {
 
   getGyphList(
     query: string = '',
-    page: number = 1,
-    limit: number = 10
+    pageIndex: number = 1,
+    pageSize: number = 10
   ): Observable<Gyph[]> {
-    const offset = (page - 1) * limit;
+    const limit = pageSize * pageIndex;
+    const offset = (pageIndex - 1) * pageSize;
     const gyphsListUrl =
       this.baseUrl +
-      `&q=${query}&limit=${limit}&offset=${offset}&rating=G&lang=en`;
+      `&q=${query}&limit=${limit}&offset=${offset}&rating=PG-13&lang=en`;
+
     return this.http
       .get(gyphsListUrl)
       .pipe(map(response => this.responseToGyph(response)));
   }
+
   responseToGyph(response): Gyph[] {
     const items: any[] = response.data;
     const res = items.map(item => this.toGyph(item));

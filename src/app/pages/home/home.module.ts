@@ -1,5 +1,6 @@
 // Feature module for Gyphs - lazy loaded
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import {
   MatButtonModule,
   MatCardModule,
@@ -27,6 +28,7 @@ import { GyphService } from './services/gyph.service';
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
+    CommonModule,
     FormsModule
   ],
   providers: [GyphService]

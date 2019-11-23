@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Gyph } from '@/app/pages/home/models/gyph.model';
 @Component({
   selector: 'gyph-list',
@@ -6,7 +6,7 @@ import { Gyph } from '@/app/pages/home/models/gyph.model';
   styleUrls: ['./gyph-list.component.scss']
 })
 export class GyphListComponent implements OnInit {
-  gyphs: Gyph[] = [];
+  @Input() gyphs: Gyph[];
   constructor() { }
 
   ngOnInit() {
