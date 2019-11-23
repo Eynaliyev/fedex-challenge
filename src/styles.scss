@@ -1,7 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  color: hotpink !important;
+  font-family: fantasy !important;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .page {
   width: 100%;
@@ -10,4 +14,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .app-title {
   text-align: center;
+}
+.profanity-warning {
+  .profanity-warning--text{
+    color: red;
+  }
 }

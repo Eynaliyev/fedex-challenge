@@ -1,4 +1,4 @@
-// Feature module for Gyphs - lazy loaded
+// Feature module for giphs - lazy loaded
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
@@ -11,14 +11,14 @@ import {
 } from "@angular/material";
 import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-import { GyphListComponent } from './components/gyph-list/gyph-list.component';
+import { giphListComponent } from './components/giph-list/giph-list.component';
 import { FormsModule } from "@angular/forms";
-import { GyphService } from './services/gyph.service';
+import { GiphService } from './services/giph.service';
 import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   declarations: [
-    GyphListComponent,
+    giphListComponent,
     HomePageComponent,
     SearchFormComponent
   ],
@@ -33,6 +33,6 @@ import { HomeRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule
   ],
-  providers: [GyphService]
+  providers: [GiphService]
 })
 export class HomePageModule { }

@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { GyphService } from './services/gyph.service';
-import { Gyph } from './models/gyph.model';
-
+import { GiphService } from './services/giph.service';
+import { giph } from './models/giph.model';
+import Filter from 'bad-words';
 @Component({
   selector: 'home-page',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  gyphList: Gyph[] = [];
-  displayList: Gyph[] = [];
+  giphList: giph[] = [];
+  displayList: giph[] = [];
   // MatPaginator Inputs
   listLength = 0;
   pageIndex = 0;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
+  filter = new Filter();
+  showProfanityWarning = false;
 
-  constructor(private gyphSrvc: GyphService) { }
+  constructor(private giphSrvc: GiphService) { }
 
   ngOnInit() {
   }
@@ -34,12 +36,17 @@ export class HomePageComponent implements OnInit {
   }
 
   onSearchTermChange(e) {
-    this.gyphSrvc.getGyphList(e, this.pageIndex, this.pageSize)
-      .subscribe(res => {
-        this.gyphList = res;
-        this.listLength = res.length;
-        this.resetPaginator();
-      });
+    if (this.filter.isProfane(e)) {
+      this.showProfanityWarning = true;
+    } else {
+      this.showProfanityWarning = false;
+      this.giphSrvc.getgiphList(e, this.pageIndex, this.pageSize)
+        .subscribe(res => {
+          this.giphList = res;
+          this.listLength = res.length;
+          this.resetPaginator();
+        });
+    }
   }
 
   resetPaginator() {
@@ -50,7 +57,7 @@ export class HomePageComponent implements OnInit {
   updateDisplayList() {
     const startIndex = this.pageIndex * this.pageSize;
     const endIndex = (this.pageIndex + 1) * this.pageSize;
-    this.displayList = this.gyphList.slice(startIndex, endIndex);
+    this.displayList = this.giphList.slice(startIndex, endIndex);
   }
 
 }

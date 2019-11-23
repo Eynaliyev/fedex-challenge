@@ -3,38 +3,38 @@ import { map } from "rxjs/operators";
 import { environment } from "@/environments/environment";
 import { Observable } from "rxjs";
 import { Injectable } from '@angular/core';
-import { Gyph } from '../models/gyph.model';
+import { giph } from '../models/giph.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GyphService {
+export class GiphService {
   baseUrl = `https://api.giphy.com/v1/gifs/search?api_key=${environment.api_key}`;
   constructor(private http: HttpClient) { }
 
-  getGyphList(
+  getgiphList(
     query: string = '',
     pageIndex: number = 1,
     pageSize: number = 10
-  ): Observable<Gyph[]> {
+  ): Observable<giph[]> {
     const limit = 200; // could potentially extend the functionality to make this
     const offset = pageIndex * pageSize;
-    const gyphsListUrl =
+    const giphsListUrl =
       this.baseUrl +
       `&q=${query}&limit=${limit}&offset=${offset}&rating=PG&lang=en`;
 
     return this.http
-      .get(gyphsListUrl)
-      .pipe(map(response => this.responseToGyph(response)));
+      .get(giphsListUrl)
+      .pipe(map(response => this.responseTogiph(response)));
   }
 
-  responseToGyph(response): Gyph[] {
+  responseTogiph(response): giph[] {
     const items: any[] = response.data;
-    const res = items.map(item => this.toGyph(item));
+    const res = items.map(item => this.togiph(item));
     return res;
   }
 
-  toGyph(item): Gyph {
+  togiph(item): giph {
     const result = {
       id: item.id,
       url: item.images.downsized_large.url

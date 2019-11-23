@@ -13,14 +13,14 @@ import { Observable } from "rxjs";
 
 import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-import { GyphListComponent } from './components/gyph-list/gyph-list.component';
-import { GyphService } from './services/gyph.service';
-import { mockGyphs } from './services/mock-data';
+import { GiphListComponent } from './components/giph-list/giph-list.component';
+import { GiphService } from './services/giph.service';
+import { mockgiphs } from './services/mock-data';
 
-class MockGyphService {
+class MockgiphService {
   getVenuesList() {
     return new Observable(observer => {
-      observer.next(mockGyphs);
+      observer.next(mockgiphs);
       observer.complete();
     });
   }
@@ -35,7 +35,7 @@ describe('HomePageComponent', () => {
       declarations: [
         HomePageComponent,
         SearchFormComponent,
-        GyphListComponent
+        GiphListComponent
       ],
       imports: [
         MatButtonModule,
@@ -48,7 +48,7 @@ describe('HomePageComponent', () => {
         FormsModule
       ],
       providers: [
-        { provide: GyphService, useClass: MockGyphService }
+        { provide: GiphService, useClass: MockgiphService }
       ]
     })
       .compileComponents();

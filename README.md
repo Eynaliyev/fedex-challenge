@@ -15,19 +15,19 @@ This is done to reduce time to interactivity and to render the header ASAP and g
 
 For UI I'm using Angular Material library.
 
-The home page module is spit into a smart component home page and three dumb components search form and gyphs list - the smart component passes data to its children and the dumb components are only responsible for displaying the data and communicating user interaction events back to the parent.
+The home page module is spit into a smart component home page and three dumb components search form and giphs list - the smart component passes data to its children and the dumb components are only responsible for displaying the data and communicating user interaction events back to the parent.
 
 app.component - a wrapper component with a router outlet for pages and a common header.
 
-home-page.component.ts - a smart components responsible for interacting with the services (in this case only gyph service). Also responsible for pagination logic.
+home-page.component.ts - a smart components responsible for interacting with the services (in this case only giph service). Also responsible for pagination logic.
 
-gyph.service.ts - The service responsible for requesting data from the server, as well as parsing it. Currently in the home page module as it is the only place it's used, potentially could be moved to a shared module if necessary.
+giph.service.ts - The service responsible for requesting data from the server, as well as parsing it. Currently in the home page module as it is the only place it's used, potentially could be moved to a shared module if necessary.
 
-gyph.model.ts - model for the gyph
+giph.model.ts - model for the giph
 
-search-form.componet - a dumb comonent responsible for communicating search term and triggering request for gyph
+search-form.componet - a dumb comonent responsible for communicating search term and triggering request for giph
 
-gyph-list.component.ts - a dumb component responsible only for displaying gyph list.
+giph-list.component.ts - a dumb component responsible only for displaying giph list.
 
 
 ## Further Improvement
@@ -35,7 +35,7 @@ gyph-list.component.ts - a dumb component responsible only for displaying gyph l
 1. Implement pre-loading for future pages / feature modules - to reduce load time of secondary routes on first session
 2. Add a service worker for caching the application on the client, thus reducing load times for every subsequent session
 3. add e2e tests
-4. add a spinner indicating that the gyph list is loading
+4. add a spinner indicating that the giph list is loading
 5. error logging in a remote server
 6. once there are more people we could add a more comprehensive branching strategy
 7. add Continuous integration and run tests there on pre-depoy

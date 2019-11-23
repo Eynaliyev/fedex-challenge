@@ -1,4 +1,4 @@
-export interface Gyph {
+export interface giph {
   url: string,
   id: string
 }

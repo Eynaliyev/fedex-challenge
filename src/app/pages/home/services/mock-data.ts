@@ -1,5 +1,5 @@
 import { defer } from "rxjs";
-import { Gyph } from '../models/gyph.model';
+import { giph } from '../models/giph.model';
 /* Helper function
  Creates async observable that emits-once and completes
  *  after a JS engine turn */
@@ -8,7 +8,7 @@ export function asyncData<T>(data: T) {
 }
 
 // data after being parsed
-export const mockGyphs: Gyph[] = [
+export const mockgiphs: giph[] = [
   {
     id: "3oKIPusxB2uXOmoP0k",
     url: "https://giphy.com/gifs/DNCE-3oKIPusxB2uXOmoP0k"

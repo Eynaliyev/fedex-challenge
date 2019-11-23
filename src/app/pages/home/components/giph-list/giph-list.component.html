@@ -1,0 +1,8 @@
+<div class="profanity-warning" *ngIf="showProfanityWarning">
+  <h2 class="profanity-warning--text">You may not use profane language</h2>
+</div>
+<mat-card *ngFor="let giph of giphs; trackBy: trackByFn">
+  <mat-card-content>
+    <img mat-card-image [src]="giph.url" />
+  </mat-card-content>
+</mat-card>
