@@ -4,7 +4,7 @@ import { GiphService } from './giph.service';
 import { HttpClientModule } from '@angular/common/http';
 import {
   mockResponse,
-  mockgiphs,
+  mockGiphs,
   asyncData
 } from "./mock-data";
 
@@ -25,7 +25,7 @@ describe('giphService', () => {
   });
   it("should convert getGiphList response to giph", () => {
     const res = giphService.responseTogiph(mockResponse);
-    expect(res).toEqual(mockgiphs, "expected giphs");
+    expect(res).toEqual(mockGiphs, "expected giphs");
   });
 
   it("should return expected giphs (HttpClient called once)", () => {
@@ -34,7 +34,7 @@ describe('giphService', () => {
     giphService
       .getGiphList('puppies', 1, 10)
       .subscribe(
-        giphs => expect(giphs).toEqual(mockgiphs, "expected response"),
+        giphs => expect(giphs).toEqual(mockGiphs, "expected response"),
         fail
       );
     expect(httpClientSpy.get.calls.count()).toBe(1, "one call");

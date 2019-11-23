@@ -15,12 +15,12 @@ import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { GiphListComponent } from './components/giph-list/giph-list.component';
 import { GiphService } from './services/giph.service';
-import { mockgiphs } from './services/mock-data';
+import { mockGiphs } from './services/mock-data';
 
 class MockgiphService {
   getVenuesList() {
     return new Observable(observer => {
-      observer.next(mockgiphs);
+      observer.next(mockGiphs);
       observer.complete();
     });
   }

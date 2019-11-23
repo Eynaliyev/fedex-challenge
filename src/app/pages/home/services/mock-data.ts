@@ -8,7 +8,7 @@ export function asyncData<T>(data: T) {
 }
 
 // data after being parsed
-export const mockgiphs: Giph[] = [
+export const mockGiphs: Giph[] = [
   {
     id: "3oKIPusxB2uXOmoP0k",
     url: "https://giphy.com/gifs/DNCE-3oKIPusxB2uXOmoP0k"
