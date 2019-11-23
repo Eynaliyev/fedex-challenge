@@ -12,6 +12,7 @@ import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { GyphListComponent } from './components/gyph-list/gyph-list.component';
 import { FormsModule } from "@angular/forms";
+import { GyphService } from './services/gyph.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule } from "@angular/forms";
     MatInputModule,
     MatPaginatorModule,
     FormsModule
-  ]
+  ],
+  providers: [GyphService]
 })
 export class HomePageModule { }
