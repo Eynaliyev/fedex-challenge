@@ -14,6 +14,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { GyphListComponent } from './components/gyph-list/gyph-list.component';
 import { FormsModule } from "@angular/forms";
 import { GyphService } from './services/gyph.service';
+import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { GyphService } from './services/gyph.service';
     SearchFormComponent
   ],
   imports: [
+    HomeRoutingModule,
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
