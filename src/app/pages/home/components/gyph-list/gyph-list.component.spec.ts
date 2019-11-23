@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule } from "@angular/material";
 
 import { GyphListComponent } from './gyph-list.component';
 
@@ -8,9 +9,10 @@ describe('GyphListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GyphListComponent ]
+      declarations: [GyphListComponent],
+      imports: [MatCardModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-// Feature module for Venues - lazy loaded
+// Feature module for Gyphs - lazy loaded
 import { NgModule } from "@angular/core";
 import {
   MatButtonModule,
