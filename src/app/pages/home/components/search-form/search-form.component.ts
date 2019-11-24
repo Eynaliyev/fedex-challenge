@@ -9,7 +9,6 @@ import { validateAllFormFields } from '@app/shared/validator';
 })
 export class SearchFormComponent implements OnInit {
   @Output() searchgiphs = new EventEmitter<string>();
-  searchTerm = null;
   warningMessage = 'You may not use profane language';
   searchFormGroup = new FormGroup({
     searchInputControl: new FormControl('', [profanityValidator()]),
@@ -23,7 +22,7 @@ export class SearchFormComponent implements OnInit {
 
   searchGiphs() {
     if (validateAllFormFields(this.searchFormGroup)) {
-      this.searchgiphs.emit(this.searchTerm);
+      this.searchgiphs.emit(this.searchFormGroup.controls.searchInputControl.value);
     }
   }
 }
