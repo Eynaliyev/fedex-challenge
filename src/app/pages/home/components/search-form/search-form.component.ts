@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { profanityValidator } from './profanity-validator';
-import { validateAllFormFields } from '@app/shared/validator';
+import { validateAllFormFields, profanityValidator } from '@app/shared/validator';
 @Component({
   selector: 'search-form',
   templateUrl: './search-form.component.html',

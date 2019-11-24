@@ -15,7 +15,7 @@ import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { GiphListComponent } from './components/giph-list/giph-list.component';
 import { GiphService } from './services/giph.service';
-import { mockGiphs } from './services/mock-data';
+import { mockGiphs } from './services/giph.service.spec.mocks';
 
 class MockGiphService {
   getVenuesList() {

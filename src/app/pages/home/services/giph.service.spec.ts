@@ -6,7 +6,7 @@ import {
   mockResponse,
   mockGiphs,
   asyncData
-} from "./mock-data";
+} from "./giph.service.spec.mocks";
 
 let httpClientSpy: { get: jasmine.Spy };
 let giphService: GiphService;

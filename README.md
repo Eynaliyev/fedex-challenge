@@ -25,9 +25,11 @@ giph.service.ts - The service responsible for requesting data from the server, a
 
 giph.model.ts - model for the giph
 
-search-form.componet - a semi-dumb comonent responsible for communicating search term and triggering request for giph. It also communicates with the 
+search-form.componet - a semi-dumb comonent responsible for communicating search term and triggering request for giph. It also communicates with thevalidator utility function.
 
 giph-list.component.ts - a dumb component responsible only for displaying giph list.
+
+shared/validator.ts - validation utility functions 
 
 
 ## Further Improvement
@@ -40,7 +42,7 @@ giph-list.component.ts - a dumb component responsible only for displaying giph l
 6. once there are more people we could add a more comprehensive branching strategy
 7. add Continuous integration and run tests there on pre-depoy
 8. Deploy to a server
-9. use a library for profanity detection that has type file or create my own
+9. use a library for profanity detection that has types file or add my own
 
 
 ## Development server

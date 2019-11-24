@@ -1,4 +1,6 @@
 import { FormGroup, FormControl } from '@angular/forms';
+import { ValidatorFn, AbstractControl } from '@angular/forms';
+import Filter from 'bad-words';
 
 export const validateAllFormFields = (formGroup: FormGroup): boolean => {
   let isValid = true;
@@ -15,3 +17,10 @@ export const validateAllFormFields = (formGroup: FormGroup): boolean => {
   });
   return isValid;
 }
+
+export const profanityValidator = (): ValidatorFn => {
+  const filter = new Filter();
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    return filter.isProfane(control.value) ? { 'profanity': { value: control.value } } : null;
+  };
+};
