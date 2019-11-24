@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Giph } from '@/app/pages/home/models/giph.model';
 @Component({
   selector: 'giph-list',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GiphService } from './services/giph.service';
 import { Giph } from './models/giph.model';
 @Component({
