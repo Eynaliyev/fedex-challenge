@@ -35,7 +35,7 @@ export class HomePageComponent implements OnInit {
     this.updateDisplayList();
   }
 
-  onSearchTermChange(e) {
+  onSearchTermChange(e: string) {
     if (this.filter.isProfane(e)) {
       this.showProfanityWarning = true;
     } else {

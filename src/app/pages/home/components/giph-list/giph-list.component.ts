@@ -13,7 +13,7 @@ export class GiphListComponent implements OnInit {
 
   ngOnInit() {
   }
-  trackByFn(index, item) {
+  trackByFn(index, item: Giph) {
     if (!item) return null;
     return item.id;
   }

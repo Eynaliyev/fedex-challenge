@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'fedex-code-challenge'`, () => {
+  it(`should have as title 'FedEx giph search'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('fedex-code-challenge');
+    expect(app.title).toEqual('FedEx giph search');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('fedex-code-challenge');
+    expect(compiled.querySelector('h1').textContent).toContain('FedEx giph search');
   });
 });

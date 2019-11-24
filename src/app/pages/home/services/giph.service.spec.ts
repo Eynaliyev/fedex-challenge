@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { GiphService } from './giph.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {
   mockResponse,
   mockGiphs,
@@ -13,18 +13,18 @@ let giphService: GiphService;
 
 describe('giphService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientModule],
-    providers: [giphService]
+    imports: [HttpClientTestingModule],
+    providers: [GiphService]
   }));
   httpClientSpy = jasmine.createSpyObj("HttpClient", ["get"]);
   giphService = new GiphService(<any>httpClientSpy);
 
   it('should be created', () => {
-    const service: GiphService = TestBed.get(giphService);
+    const service: GiphService = TestBed.get(GiphService);
     expect(service).toBeTruthy();
   });
   it("should convert getGiphList response to giph", () => {
-    const res = giphService.responseTogiph(mockResponse);
+    const res = giphService.responseToGiph(mockResponse);
     expect(res).toEqual(mockGiphs, "expected giphs");
   });
 

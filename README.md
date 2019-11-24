@@ -36,7 +36,7 @@ giph-list.component.ts - a dumb component responsible only for displaying giph l
 2. Add a service worker for caching the application on the client, thus reducing load times for every subsequent session
 3. add e2e tests
 4. add a spinner indicating that the giph list is loading
-5. error logging in a remote server
+5. add centralised error handling utility - even better if logging in a remote server
 6. once there are more people we could add a more comprehensive branching strategy
 7. add Continuous integration and run tests there on pre-depoy
 8. Deploy to a server
