@@ -25,7 +25,7 @@ giph.service.ts - The service responsible for requesting data from the server, a
 
 giph.model.ts - model for the giph
 
-search-form.componet - a dumb comonent responsible for communicating search term and triggering request for giph
+search-form.componet - a semi-dumb comonent responsible for communicating search term and triggering request for giph. It also communicates with the 
 
 giph-list.component.ts - a dumb component responsible only for displaying giph list.
 
