@@ -1,6 +1,9 @@
-<form class="search-form">
+<form class="search-form" [formGroup]="searchFormGroup" (ngSubmit)="searchGiphs()">
   <mat-form-field class="search--field">
-    <input matInput name="searchFormTextField" placeholder="Search" [(ngModel)]="searchTerm">
+    <input matInput name="searchFormTextField" placeholder="Search" formControlName="searchInputControl"
+      [errorStateMatcher]="matcher">
+    <mat-error>{{warningMessage}}</mat-error>
   </mat-form-field>
-  <button mat-raised-button class="search--btn" (click)="searchGiphs()">Find giphs!</button>
+  <button mat-raised-button name="searchFormSubmitBtn" class="search--btn" type="submit">Find
+    giphs!</button>
 </form>

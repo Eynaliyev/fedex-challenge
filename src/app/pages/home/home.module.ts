@@ -1,6 +1,7 @@
 // Feature module for giphs - lazy loaded
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
@@ -12,7 +13,6 @@ import {
 import { HomePageComponent } from './home.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { GiphListComponent } from './components/giph-list/giph-list.component';
-import { FormsModule } from "@angular/forms";
 import { GiphService } from './services/giph.service';
 import { HomeRoutingModule } from './home-routing.module';
 
@@ -31,6 +31,7 @@ import { HomeRoutingModule } from './home-routing.module';
     MatInputModule,
     MatPaginatorModule,
     CommonModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [GiphService]

@@ -40,6 +40,7 @@ giph-list.component.ts - a dumb component responsible only for displaying giph l
 6. once there are more people we could add a more comprehensive branching strategy
 7. add Continuous integration and run tests there on pre-depoy
 8. Deploy to a server
+9. use a library for profanity detection that has type file or create my own
 
 
 ## Development server

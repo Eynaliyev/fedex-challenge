@@ -8,7 +8,7 @@ import {
   MatPaginatorModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from "rxjs";
 
 import { HomePageComponent } from './home.component';
@@ -17,7 +17,7 @@ import { GiphListComponent } from './components/giph-list/giph-list.component';
 import { GiphService } from './services/giph.service';
 import { mockGiphs } from './services/mock-data';
 
-class MockgiphService {
+class MockGiphService {
   getVenuesList() {
     return new Observable(observer => {
       observer.next(mockGiphs);
@@ -38,17 +38,18 @@ describe('HomePageComponent', () => {
         GiphListComponent
       ],
       imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
         MatButtonModule,
         MatCardModule,
         MatDividerModule,
         MatFormFieldModule,
         MatInputModule,
-        MatPaginatorModule,
-        BrowserAnimationsModule,
-        FormsModule
+        MatPaginatorModule
       ],
       providers: [
-        { provide: GiphService, useClass: MockgiphService }
+        { provide: GiphService, useClass: MockGiphService }
       ]
     })
       .compileComponents();

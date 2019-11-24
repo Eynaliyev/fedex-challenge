@@ -7,7 +7,6 @@ import { Giph } from '@/app/pages/home/models/giph.model';
 })
 export class GiphListComponent implements OnInit {
   @Input() giphs: Giph[];
-  @Input() showProfanityWarning: boolean;
 
   constructor() { }
 
