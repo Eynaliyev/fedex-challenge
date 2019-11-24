@@ -6,7 +6,7 @@ import { Giph } from './models/giph.model';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
   giphList: Giph[] = [];
   displayList: Giph[] = [];
 
@@ -17,9 +17,6 @@ export class HomePageComponent implements OnInit {
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   constructor(private giphSrvc: GiphService) { }
-
-  ngOnInit() {
-  }
 
   onPageChange(e) {
     this.pageIndex = e.pageIndex;

@@ -7,7 +7,7 @@ import { validateAllFormFields } from '@app/shared/validator';
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.scss']
 })
-export class SearchFormComponent implements OnInit {
+export class SearchFormComponent {
   @Output() searchgiphs = new EventEmitter<string>();
   warningMessage = 'You may not use profane language';
   searchFormGroup = new FormGroup({
@@ -16,9 +16,6 @@ export class SearchFormComponent implements OnInit {
   });
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   searchGiphs() {
     if (validateAllFormFields(this.searchFormGroup)) {

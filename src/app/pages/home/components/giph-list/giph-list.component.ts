@@ -5,13 +5,11 @@ import { Giph } from '@/app/pages/home/models/giph.model';
   templateUrl: './giph-list.component.html',
   styleUrls: ['./giph-list.component.scss']
 })
-export class GiphListComponent implements OnInit {
+export class GiphListComponent {
   @Input() giphs: Giph[];
 
   constructor() { }
 
-  ngOnInit() {
-  }
   trackByFn(index, item: Giph) {
     if (!item) return null;
     return item.id;
