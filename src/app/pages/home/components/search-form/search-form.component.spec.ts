@@ -4,7 +4,7 @@ import {
   MatFormFieldModule,
   MatInputModule
 } from "@angular/material";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SearchFormComponent } from './search-form.component';
@@ -17,11 +17,12 @@ describe('SearchFormComponent', () => {
     TestBed.configureTestingModule({
       declarations: [SearchFormComponent],
       imports: [
+        BrowserAnimationsModule,
         FormsModule,
+        ReactiveFormsModule,
         MatButtonModule,
         MatFormFieldModule,
-        MatInputModule,
-        BrowserAnimationsModule
+        MatInputModule
       ]
     }).compileComponents();
   }));
